@@ -16,11 +16,11 @@ McCormick Place Convention Center, West Building, W470a
 
 **Instructor** 
 
-Simon Munzert ([website](https://simonmunzert.github.io), [twitter](https://twitter.com/simonsaysnothin))
+Simon Munzert ([website](https://simonmunzert.github.io), [Twitter](https://twitter.com/simonsaysnothin))
 
 **Requirements**
 
-This course assumes prior experience using R. Please bring a laptop with the latest version of R and Rstudio installed. 
+This course assumes prior experience using R. Please bring a laptop with the latest version of R and Rstudio installed (see more below for the technical setup). 
 
 **Time schedule**
 
@@ -33,12 +33,20 @@ This course assumes prior experience using R. Please bring a laptop with the lat
 
 
 ## Accompanying book
-[Automated Data Collection with R](http://r-datacollection.com)
+Together with Christian Rubba, Peter Meissner, and Dominic Nyhuis, I've written a book on [Automated Data Collection with R](http://r-datacollection.com). Participants of the course might find it useful to have it as an accompanying resource. 
 
 
 ## Technical setup for the course
 
-
+We are going to need a couple of packages from CRAN: You can install them all by executing the following code chunk:
+```r
+p_needed <- c("plyr", "dplyr", "stringr", "lubridate", "jsonlite", "httr", "xml2", "rvest", "devtools", "ggmap", "pageviews", "networkD3", "RSelenium", "aRxiv")
+packages <- rownames(installed.packages())
+p_to_install <- p_needed[!(p_needed %in% packages)]
+if (length(p_to_install) > 0) {
+  install.packages(p_to_install)
+}
+```
 
 ## Resources
 | Area | URL | Short description |
