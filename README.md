@@ -1,11 +1,20 @@
-# rscraping-jsm-2016
-Repository for one-day course "A Primer to Web Scraping with R"
+# A primer to Web Scraping with R
+
+*Summary:*
+The web is full of data that are of great interest to scientists and businesses alike. Firms, public institutions, and private users provide every imaginable type of information, and new channels of communication generate vast amounts of data on human behavior. But how to efficiently collect data from the Internet; retrieve information from social networks, search engines, and dynamic web pages; tap web services; and, finally, process the collected data with statistical software? We will learn about the basics of web data collection practice with R. The sessions are hands-on; we will practice every step of the process with R using various examples. We will learn how to scrape content from static and dynamic web pages, connect to APIs from popular web services such as Twitter to read out and process user data, and set up automatically working scraper programs. 
+
+*Event:* Joint Statistical Meetings 2016, Continuing Education Course, Chicago
+
+*Venue:* McCormick Place Convention Center, West Building, W470a
+
+*Instructor:* Simon Munzert ([website](https://simonmunzert.github.io), [twitter](https://twitter.com/simonsaysnothin))
+
+*Requirements:*
+This course assumes prior experience using R. Please bring a laptop with the latest version of R and Rstudio installed. 
 
 
 
-# resources
-
-
+## Resources
 | Area | URL | Short description |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
 | Web technologies, general | http://www.w3.org/ | Base of the World Wide Web Consortium (W3C), also provides access to standards and drafts of web technologies |
