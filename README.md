@@ -61,7 +61,7 @@ Finally, if you want to follow the code on Twitter mining live in the course, pl
 
 
 
-## Resources
+## Online resources
 | Area | URL | Short description |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
 | Web technologies, general | http://www.w3.org/ | Base of the World Wide Web Consortium (W3C), also provides access to standards and drafts of web technologies |
