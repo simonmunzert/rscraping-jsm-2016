@@ -38,15 +38,28 @@ Together with Christian Rubba, Peter Meissner, and Dominic Nyhuis, I've written 
 
 ## Technical setup for the course
 
+Please make sure that the current version of R is installed. If not, update from here: [https://cran.r-project.org/](https://cran.r-project.org/)
+
+Obviously, feel free to choose the coding environment you feel most comfortable with. I'll use RStudio in the course. You might want to use it, too: [https://www.rstudio.com/products/rstudio/download/](https://www.rstudio.com/products/rstudio/download/)
+
 We are going to need a couple of packages from CRAN: You can install them all by executing the following code chunk:
 ```r
-p_needed <- c("plyr", "dplyr", "stringr", "lubridate", "jsonlite", "httr", "xml2", "rvest", "devtools", "ggmap", "pageviews", "networkD3", "RSelenium", "aRxiv")
+p_needed <- c("plyr", "dplyr", "stringr", "lubridate", "jsonlite", 
+              "httr", "xml2", "rvest", "devtools", "ggmap",
+               "networkD3", "RSelenium", "pageviews", "aRxiv", 
+               "twitteR", "streamR")
 packages <- rownames(installed.packages())
 p_to_install <- p_needed[!(p_needed %in% packages)]
 if (length(p_to_install) > 0) {
   install.packages(p_to_install)
 }
 ```
+
+Finally, if you want to follow the code on Twitter mining live in the course, please consult the instructions to connect with Twitter as described here (first section, "Connecting with Twitter"): [Connecting with Twitter using R](http://www.r-datacollection.com/blog/How-to-conduct-a-tombola-with-R/)
+
+
+
+
 
 ## Resources
 | Area | URL | Short description |
