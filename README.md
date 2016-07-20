@@ -33,7 +33,7 @@ This course assumes prior experience using R. Please bring a laptop with the lat
 
 
 ## Accompanying book
-Together with Christian Rubba, Peter Meissner, and Dominic Nyhuis, I've written a book on [Automated Data Collection with R](http://r-datacollection.com). Participants of the course might find it useful to have it as an accompanying resource. 
+Together with Christian Rubba, Peter Meissner, and Dominic Nyhuis, I've written a book on [Automated Data Collection with R](http://r-datacollection.com). Participants of the course might find it useful to consult it as further reading after the course. As a documentation of the course work, this code archive and the accompanying reader is fully sufficient though.
 
 
 ## Technical setup for the course
