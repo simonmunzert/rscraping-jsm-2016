@@ -1,0 +1,483 @@
+	
+
+ <table width="100%">
+ <tr>
+  <td style="background-color: #000000;">
+<div style="display:block; text-align:left; float:left;margin-left:1em"><font size="1" color="#FFFFFF">Published by the Foundation for Open Access Statistics</font></div>
+<div style="display:block; text-align:right;margin-right:1em"><font size="1" color="#FFFFFF">Editors-in-chief: Bettina Grün, Edzer Pebesma & Achim Zeileis &emsp;&emsp; ISSN 1548-7660; CODEN JSSOBK</font></div>
+   </td>
+ </tr>
+</table>
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+	<title>SAS Macro BDM for Fitting the Dale Regression Model to Bivariate Ordinal Response Data | McMillan | Journal of Statistical Software</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="SAS Macro BDM for Fitting the Dale Regression Model to Bivariate Ordinal Response Data" />
+	
+	<link rel="icon" href="https://www.jstatsoft.org/public/journals/1/journalFavicon_en_US.gif" type="cannot open (No such file or directory)" />
+	<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+
+	<meta name="DC.Contributor.Sponsor" xml:lang="en" content=""/>
+	<meta name="DC.Creator.PersonalName" content="Garnett McMillan"/>
+	<meta name="DC.Creator.PersonalName" content="Timothy Hanson"/>
+	<meta name="DC.Date.created" scheme="ISO8601" content="2005-05-01"/>
+	<meta name="DC.Date.dateSubmitted" scheme="ISO8601" content="2005-01-07"/>
+	<meta name="DC.Date.issued" scheme="ISO8601" content="2005-01-31"/>
+	<meta name="DC.Date.modified" scheme="ISO8601" content="2005-05-01"/>
+	<meta name="DC.Description" xml:lang="en" content="A SAS macro for fitting an extension of the Dale (1986) regression model to bivariate ordinal data is provided. The macro is described in detail and examples from Dale (1986) and McMillan, Hanson, Bedrick, and Lapham (2005) are discussed."/>
+	<meta name="DC.Format" scheme="IMT" content="PB"/>
+	<meta name="DC.Identifier" content="v014i02"/>
+	<meta name="DC.Identifier.pageNumber" content="1 - 12"/>
+							<meta name="DC.Identifier.DOI" content="10.18637/jss.v014.i02"/>
+		<meta name="DC.Identifier.URI" content="https://www.jstatsoft.org/index.php/jss/article/view/v014i02"/>
+	<meta name="DC.Language" scheme="ISO639-1" content="en"/>
+	<meta name="DC.Rights" content="Copyright (c) 2005 Garnett McMillan, Timothy Hanson" />
+	<meta name="DC.Rights" content=""/>
+	<meta name="DC.Source" content="Journal of Statistical Software"/>
+	<meta name="DC.Source.ISSN" content="1548-7660"/>
+	<meta name="DC.Source.Issue" content="1"/>	<meta name="DC.Source.URI" content="https://www.jstatsoft.org/index.php/jss"/>
+	<meta name="DC.Source.Volume" content="14"/>					<meta name="DC.Title" content="SAS Macro BDM for Fitting the Dale Regression Model to Bivariate Ordinal Response Data"/>
+		<meta name="DC.Type" content="Text.Serial.Journal"/>
+	<meta name="DC.Type.articleType" content="Articles"/>
+		<meta name="gs_meta_revision" content="1.1" />
+	<meta name="citation_journal_title" content="Journal of Statistical Software"/>
+	<meta name="citation_issn" content="1548-7660"/>
+        <meta name="citation_author" content="Garnett McMillan"/>
+        <meta name="citation_author" content="Timothy Hanson"/>
+<meta name="citation_title" content="SAS Macro BDM for Fitting the Dale Regression Model to Bivariate Ordinal Response Data"/>
+
+	<meta name="citation_date" content="2005/05/01"/>
+
+	<meta name="citation_volume" content="14"/>
+	<meta name="citation_issue" content="1"/>
+
+			<meta name="citation_firstpage" content="1"/>
+				<meta name="citation_lastpage" content="12"/>
+								<meta name="citation_doi" content="10.18637/jss.v014.i02"/>
+		<meta name="citation_abstract_html_url" content="https://www.jstatsoft.org/index.php/jss/article/view/v014i02"/>
+	<meta name="citation_language" content="en"/>
+										<meta name="citation_fulltext_html_url" content="https://www.jstatsoft.org/index.php/jss/article/view/v014i02/v14i02.pdf"/>
+				
+
+	<link rel="stylesheet" href="https://www.jstatsoft.org/lib/pkp/styles/pkp.css" type="text/css" />
+	<link rel="stylesheet" href="https://www.jstatsoft.org/lib/pkp/styles/common.css" type="text/css" />
+	<link rel="stylesheet" href="https://www.jstatsoft.org/styles/common.css" type="text/css" />
+	<link rel="stylesheet" href="https://www.jstatsoft.org/styles/compiled.css" type="text/css" />
+	<link rel="stylesheet" href="https://www.jstatsoft.org/styles/articleView.css" type="text/css" />
+			<link rel="stylesheet" href="https://www.jstatsoft.org/lib/pkp/styles/rtEmbedded.css" type="text/css" />
+	
+	
+	
+	<link rel="stylesheet" href="https://www.jstatsoft.org/styles/sidebar.css" type="text/css" />		<link rel="stylesheet" href="https://www.jstatsoft.org/styles/rightSidebar.css" type="text/css" />	
+			<link rel="stylesheet" href="https://www.jstatsoft.org/public/site/sitestyle.css" type="text/css" />
+			<link rel="stylesheet" href="https://www.jstatsoft.org/public/journals/1/journalStyleSheet.css" type="text/css" />
+			<link rel="stylesheet" href="https://www.jstatsoft.org/plugins/generic/pln/css/pln.css" type="text/css" />
+			<link rel="stylesheet" href="https://www.jstatsoft.org/plugins/blocks/languageToggle/styles/languageToggle.css" type="text/css" />
+	
+	<!-- Base Jquery -->
+	<script type="text/javascript" src="//www.google.com/jsapi"></script>
+	<script type="text/javascript">
+		// Provide a local fallback if the CDN cannot be reached
+		if (typeof google == 'undefined') {
+			document.write(unescape("%3Cscript src='https://www.jstatsoft.org/lib/pkp/js/lib/jquery/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
+			document.write(unescape("%3Cscript src='https://www.jstatsoft.org/lib/pkp/js/lib/jquery/plugins/jqueryUi.min.js' type='text/javascript'%3E%3C/script%3E"));
+		} else {
+			google.load("jquery", "1.4.4");
+			google.load("jqueryui", "1.8.6");
+		}
+	</script>
+	
+	<!-- Compiled scripts -->
+			
+<script type="text/javascript" src="https://www.jstatsoft.org/lib/pkp/js/lib/jquery/plugins/jquery.tag-it.js"></script>
+<script type="text/javascript" src="https://www.jstatsoft.org/lib/pkp/js/lib/jquery/plugins/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="https://www.jstatsoft.org/lib/pkp/js/functions/fontController.js"></script>
+<script type="text/javascript" src="https://www.jstatsoft.org/lib/pkp/js/functions/general.js"></script>
+<script type="text/javascript" src="https://www.jstatsoft.org/lib/pkp/js/functions/jqueryValidatorI18n.js"></script>
+
+<script type="text/javascript" src="https://www.jstatsoft.org/lib/pkp/js/classes/Helper.js"></script>
+<script type="text/javascript" src="https://www.jstatsoft.org/lib/pkp/js/classes/ObjectProxy.js"></script>
+<script type="text/javascript" src="https://www.jstatsoft.org/lib/pkp/js/classes/Handler.js"></script>
+<script type="text/javascript" src="https://www.jstatsoft.org/lib/pkp/js/classes/linkAction/LinkActionRequest.js"></script>
+<script type="text/javascript" src="https://www.jstatsoft.org/lib/pkp/js/classes/features/Feature.js"></script>
+
+<script type="text/javascript" src="https://www.jstatsoft.org/lib/pkp/js/controllers/SiteHandler.js"></script><!-- Included only for namespace definition -->
+<script type="text/javascript" src="https://www.jstatsoft.org/lib/pkp/js/controllers/UrlInDivHandler.js"></script>
+<script type="text/javascript" src="https://www.jstatsoft.org/lib/pkp/js/controllers/AutocompleteHandler.js"></script>
+<script type="text/javascript" src="https://www.jstatsoft.org/lib/pkp/js/controllers/ExtrasOnDemandHandler.js"></script>
+<script type="text/javascript" src="https://www.jstatsoft.org/lib/pkp/js/controllers/form/FormHandler.js"></script>
+<script type="text/javascript" src="https://www.jstatsoft.org/lib/pkp/js/controllers/form/AjaxFormHandler.js"></script>
+<script type="text/javascript" src="https://www.jstatsoft.org/lib/pkp/js/controllers/form/ClientFormHandler.js"></script>
+<script type="text/javascript" src="https://www.jstatsoft.org/lib/pkp/js/controllers/grid/GridHandler.js"></script>
+<script type="text/javascript" src="https://www.jstatsoft.org/lib/pkp/js/controllers/linkAction/LinkActionHandler.js"></script>
+
+<script type="text/javascript" src="https://www.jstatsoft.org/js/pages/search/SearchFormHandler.js"></script>
+<script type="text/javascript" src="https://www.jstatsoft.org/js/statistics/ReportGeneratorFormHandler.js"></script>
+<script type="text/javascript" src="https://www.jstatsoft.org/plugins/generic/lucene/js/LuceneAutocompleteHandler.js"></script>
+
+<script type="text/javascript" src="https://www.jstatsoft.org/lib/pkp/js/lib/jquery/plugins/jquery.pkp.js"></script>
+
+<script type="text/javascript" src="https://www.jstatsoft.org/cufon/cufon-yui.js"></script>
+<script type="text/javascript" src="https://www.jstatsoft.org/cufon/TeXGyreChorus_italic_500.font.js"></script>
+<script type="text/javascript">
+   Cufon.replace("h1");
+</script>	
+	
+	<link rel="alternate" type="application/atom+xml" title="Journal of Statistical Software (atom+xml)" href="https://www.jstatsoft.org/index.php/jss/gateway/plugin/WebFeedGatewayPlugin/atom" />
+	<link rel="alternate" type="application/rdf+xml" title="Journal of Statistical Software (rdf+xml)" href="https://www.jstatsoft.org/index.php/jss/gateway/plugin/WebFeedGatewayPlugin/rss" />
+	<link rel="alternate" type="application/rss+xml" title="Journal of Statistical Software (rss+xml)" href="https://www.jstatsoft.org/index.php/jss/gateway/plugin/WebFeedGatewayPlugin/rss2" />
+	<script type="text/javascript" src="https://www.jstatsoft.org/js/relatedItems.js"></script>
+	<script type="text/javascript" src="https://www.jstatsoft.org/js/inlinePdf.js"></script>
+	<script type="text/javascript" src="https://www.jstatsoft.org/js/pdfobject.js"></script>
+
+</head>
+<body id="pkp-common-openJournalSystems">
+
+<div id="container">
+<div id="header">
+<div id="headerTitle">
+<h1>
+	<img src="https://www.jstatsoft.org/public/journals/1/pageHeaderTitleImage_en_US.png" width="731" height="50" alt="Journal of Statistical Software" />
+</h1>
+</div>
+</div>
+
+
+
+
+<div id="body">
+
+	<div id="sidebar">
+							<div id="rightSidebar">
+				
+
+<div class="block" id="sidebarRTArticleTools">
+
+	<span class="blockTitle">Article Tools</span>
+				<div class="articleToolItem">
+			<img src="https://www.jstatsoft.org/plugins/blocks/readingTools/icons/printArticle.png" class="articleToolIcon" alt="" /> <a href="javascript:openRTWindow('https://www.jstatsoft.org/index.php/jss/rt/printerFriendly/v014i02/0');">Print this article</a>
+		</div>
+				<div class="articleToolItem">
+			<img src="https://www.jstatsoft.org/plugins/blocks/readingTools/icons/metadata.png" class="articleToolIcon" alt=""/> <a href="javascript:openRTWindow('https://www.jstatsoft.org/index.php/jss/rt/metadata/v014i02/0');">Indexing metadata</a><br />
+		</div>
+				<div class="articleToolItem">
+			<img src="https://www.jstatsoft.org/plugins/blocks/readingTools/icons/citeArticle.png" class="articleToolIcon" alt=""/> <a href="javascript:openRTWindow('https://www.jstatsoft.org/index.php/jss/rt/captureCite/v014i02/0');">How to cite item</a><br />
+		</div>
+				<div class="articleToolItem">
+			<img src="https://www.jstatsoft.org/plugins/blocks/readingTools/icons/suppFiles.png" class="articleToolIcon" alt=""/> <a href="javascript:openRTWindow('https://www.jstatsoft.org/index.php/jss/rt/suppFiles/v014i02/0');">Supplementary files</a><br />
+		</div>
+				<div class="articleToolItem">
+			<img src="https://www.jstatsoft.org/plugins/blocks/readingTools/icons/findingReferences.png" class="articleToolIcon" alt=""/> <a href="javascript:openRTWindow('https://www.jstatsoft.org/index.php/jss/rt/findingReferences/1451/0');">Finding References</a>
+		</div>
+					<div class="articleToolItem">
+			<img src="https://www.jstatsoft.org/plugins/blocks/readingTools/icons/emailArticle.png" class="articleToolIcon" alt=""/>
+			Email this article <span style="font-size: 0.8em">(Login required)</span>		</div>
+				<div class="articleToolItem">
+			<img src="https://www.jstatsoft.org/plugins/blocks/readingTools/icons/emailArticle.png" class="articleToolIcon" alt=""/>
+			Email the author <span style="font-size: 0.8em">(Login required)</span>		</div>
+		</div>
+
+
+<script type="text/javascript">
+	initRelatedItems();
+</script>
+
+
+<div class="block" id="sidebarRTRelatedItems">
+	<span class="blockTitle">Related Items</span>
+		<table width="100%">
+			<tr>
+				<td valign="top" style="width:26px;">
+					<img src="https://www.jstatsoft.org/plugins/blocks/relatedItems/icons/lookupTerms.png" class="articleToolIcon" alt=""/>
+				</td>
+				<td valign="top">
+					<div id="relatedItems">
+						<ul class="plain">
+																					<li><a href="javascript:openRTWindowWithToolbar('https://www.jstatsoft.org/index.php/jss/rt/context/v014i02/0/194');">Author&#039;s work</a></li>
+																																									<li><a href="javascript:openRTWindowWithToolbar('https://www.jstatsoft.org/index.php/jss/rt/context/v014i02/0/196');">Book searches</a></li>
+																												<li><a href="javascript:openRTWindowWithToolbar('https://www.jstatsoft.org/index.php/jss/rt/context/v014i02/0/197');">Databases</a></li>
+																												<li><a href="javascript:openRTWindowWithToolbar('https://www.jstatsoft.org/index.php/jss/rt/context/v014i02/0/198');">Math theory</a></li>
+																												<li><a href="javascript:openRTWindowWithToolbar('https://www.jstatsoft.org/index.php/jss/rt/context/v014i02/0/199');">Related studies</a></li>
+																												<li><a href="javascript:openRTWindowWithToolbar('https://www.jstatsoft.org/index.php/jss/rt/context/v014i02/0/200');">Pay-per-view</a></li>
+																												<li><a href="javascript:openRTWindowWithToolbar('https://www.jstatsoft.org/index.php/jss/rt/context/v014i02/0/201');">Online forums</a></li>
+																												<li><a href="javascript:openRTWindowWithToolbar('https://www.jstatsoft.org/index.php/jss/rt/context/v014i02/0/202');">Teaching files</a></li>
+																												<li><a href="javascript:openRTWindowWithToolbar('https://www.jstatsoft.org/index.php/jss/rt/context/v014i02/0/203');">Government policy</a></li>
+																												<li><a href="javascript:openRTWindowWithToolbar('https://www.jstatsoft.org/index.php/jss/rt/context/v014i02/0/204');">Media reports</a></li>
+																												<li><a href="javascript:openRTWindowWithToolbar('https://www.jstatsoft.org/index.php/jss/rt/context/v014i02/0/205');">Web search</a></li>
+																			</ul>
+					</div>
+					<div id="toggleRelatedItems">
+						<a id="hideRelatedItems" style="display:none;" href="javascript:void(0)">
+							<img src="https://www.jstatsoft.org/plugins/blocks/relatedItems/icons/magnifier_zoom_out.png" alt=""/> 
+							Hide
+						</a>
+						<a id="showRelatedItems" href="javascript:void(0)">
+							<img src="https://www.jstatsoft.org/plugins/blocks/relatedItems/icons/magnifier_zoom_in.png" alt=""/>
+							Show all
+						</a>
+					</div>
+				</td>
+			</tr>
+		</table>
+</div>
+
+
+<div class="block" id="sidebarRTAuthorBios">
+	<span class="blockTitle">
+					About The Authors
+			</span>
+		<div class="authorBio">
+	<p>
+		<em>Garnett McMillan</em>
+											</p>
+
+	<p></p>
+	</div>
+	<div class="separator"></div>
+		<div class="authorBio">
+	<p>
+		<em>Timothy Hanson</em>
+											</p>
+
+	<p></p>
+	</div>
+	
+	</div><div class="block" id="sidebarDevelopedBy">
+	<a class="blockTitle" href="http://pkp.sfu.ca/ojs/" id="developedBy">Open Journal Systems</a>
+</div><div class="block" id="sidebarHelp">
+	<a class="blockTitle" href="javascript:openHelp('https://www.jstatsoft.org/index.php/jss/help')">Journal Help</a>
+</div><div class="block" id="sidebarUser">
+			<span class="blockTitle">User</span>
+	
+												<form method="post" action="https://www.jstatsoft.org/index.php/jss/login/signIn">
+					<table>
+						<tr>
+							<td><label for="sidebar-username">Username</label></td>
+							<td><input type="text" id="sidebar-username" name="username" value="" size="12" maxlength="32" class="textField" /></td>
+						</tr>
+						<tr>
+							<td><label for="sidebar-password">Password</label></td>
+							<td><input type="password" id="sidebar-password" name="password" value="" size="12" class="textField" /></td>
+						</tr>
+						<tr>
+							<td colspan="2"><input type="checkbox" id="remember" name="remember" value="1" /> <label for="remember">Remember me</label></td>
+						</tr>
+						<tr>
+							<td colspan="2"><input type="submit" value="Login" class="button" /></td>
+						</tr>
+					</table>
+				</form>
+						</div><div class="block custom" id="customblock-FeedsBlock">
+	<div><span class="blockTitle">Feeds</span>
+<ul>
+<li><a href="/rss">RSS</a></li>
+<li><a href="/atom">Atom</a></li>
+</ul>
+</div>
+</div>	 <div class="block" id="notification">
+	<span class="blockTitle">Notifications</span>
+	<ul>
+					<li><a href="https://www.jstatsoft.org/index.php/jss/notification">View</a></li>
+			<li><a href="https://www.jstatsoft.org/index.php/jss/notification/subscribeMailList">Subscribe</a></li>
+			</ul>
+</div>
+
+<div class="block" id="sidebarNavigation">
+	<span class="blockTitle">Journal Content</span>
+
+	<form id="simpleSearchForm" action="https://www.jstatsoft.org/index.php/jss/search/search">
+		<table id="simpleSearchInput">
+			<tr>
+				<td>
+													<label for="simpleQuery">Search <br />
+					<input type="text" id="simpleQuery" name="simpleQuery" size="15" maxlength="255" value="" class="textField" /></label>
+								</td>
+			</tr>
+			<tr>
+				<td><label for="searchField">
+				Search Scope
+				<br />
+				<select id="searchField" name="searchField" size="1" class="selectMenu">
+					<option label="All" value="query">All</option>
+<option label="Authors" value="authors">Authors</option>
+<option label="Title" value="title">Title</option>
+<option label="Abstract" value="abstract">Abstract</option>
+<option label="Index terms" value="indexTerms">Index terms</option>
+<option label="Full Text" value="galleyFullText">Full Text</option>
+
+				</select></label>
+				</td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Search" class="button" /></td>
+			</tr>
+		</table>
+	</form>
+
+	<br />
+
+		<span class="blockSubtitle">Browse</span>
+	<ul>
+		<li><a href="https://www.jstatsoft.org/index.php/jss/issue/archive">By Issue</a></li>
+		<li><a href="https://www.jstatsoft.org/index.php/jss/search/authors">By Author</a></li>
+		<li><a href="https://www.jstatsoft.org/index.php/jss/search/titles">By Title</a></li>
+		
+	</ul>
+	</div>
+
+<!-- Add javascript required for font sizer -->
+<script type="text/javascript">
+	<!--
+	$(function(){
+		fontSize("#sizer", "body", 9, 16, 32, ""); // Initialize the font sizer
+	});
+	// -->
+</script>
+
+<div class="block" id="sidebarFontSize" style="margin-bottom: 4px;">
+	<span class="blockTitle">Font Size</span>
+	<div id="sizer"></div>
+</div>
+<br /><div class="block" id="sidebarInformation">
+	<span class="blockTitle">Information</span>
+	<ul>
+		<li><a href="https://www.jstatsoft.org/index.php/jss/information/readers">For Readers</a></li>		<li><a href="https://www.jstatsoft.org/index.php/jss/information/authors">For Authors</a></li>		<li><a href="https://www.jstatsoft.org/index.php/jss/information/librarians">For Librarians</a></li>	</ul>
+</div>
+
+			</div>
+			</div>
+
+<div id="main">
+
+<div id="navbar">
+<div style="background-color:#FFFFFF; border-top: 1px black dotted; border-bottom: 1px black dotted;">
+ <table width="100%">
+ <tr>
+  <td style="background-color: #FFFFFF;">
+<div style="display:block; text-align:left; float:left; margin-left:1em"><font size="+1" color="#000000">
+<a href="https://www.jstatsoft.org/index.php/jss/index">Home</a> | 
+<a href="/index.php/jss/information/authors">Instructions for Authors</a> | 
+<a href="/index.php/jss/about/submissions">JSS Style Guide</a> | 
+<a href="/index.php/jss/about/editorialTeam">Editorial Board</a> | 
+					
+							<a href="https://www.jstatsoft.org/index.php/jss/user/register">Register</a>
+					</font></div>
+<div style="display:block; text-align:right;margin-right:1em"><font size="+1" color="#000000">
+					<a href="https://www.jstatsoft.org/index.php/jss/issue/current">Current Volume</a> | 
+			<a href="https://www.jstatsoft.org/index.php/jss/issue/archive">Archives</a> | 
+							<a href="https://www.jstatsoft.org/index.php/jss/search">Search</a>
+		</font></div>
+   </td>
+ </tr>
+</table>
+</div>
+</div>
+
+<div id="breadcrumb">
+	<a href="https://www.jstatsoft.org/index.php/jss/index" target="_parent">Home</a> &gt;
+   <a href="https://www.jstatsoft.org/index.php/jss/issue/view/v014" target="_parent">Vol 14 (2005)</a> &gt;   <a href="https://www.jstatsoft.org/index.php/jss/article/view/v014i02/0" class="current" target="_parent">Issue 2</a>
+
+</div>
+
+<div id="content">
+
+	<div id="topBar">
+					</div>
+	<table class="data" width="100%">
+   <tr valign="top">
+      <td class="label" width="15%">Authors:</td>
+      <td class="value" width="85%">Garnett McMillan, Timothy Hanson</td>
+   </tr>
+   <tr valign="top">
+      <td class="label" width="15%">Title:</td>
+      <td class="value" width="85%"><b>SAS Macro BDM for Fitting the Dale Regression Model to Bivariate Ordinal Response Data</b></td>
+   </tr>
+      <tr valign="top">
+      <td class="label" width="15%">Abstract:</td>
+      <td class="value" width="85%">A SAS macro for fitting an extension of the Dale (1986) regression model to bivariate ordinal data is provided. The macro is described in detail and examples from Dale (1986) and McMillan, Hanson, Bedrick, and Lapham (2005) are discussed. 
+      </td>
+   </tr>
+      <tr>
+      <td></td>
+      <td>
+         <br>
+                  <b>Page views:</b>: 7355.
+                              <b>Submitted:</b> 2005-01-07.
+                              <b>Published:</b> 2005-05-01.
+                  <hr>
+      </td>
+   </tr>
+   
+   <tr valign="top">
+   	<td class="label" width="15%">Paper:</td>
+   	<td class="value" width="85%">
+         SAS Macro BDM for Fitting the Dale Regression Model to Bivariate Ordinal Response Data
+         &nbsp;&nbsp;&nbsp;
+            			<a href="https://www.jstatsoft.org/index.php/jss/article/view/v014i02/v14i02.pdf" class="file" target="_parent">Download PDF</a>
+   			   		         (Downloads:                                                    7358)
+         <hr>
+      </td>
+   </tr>
+
+ 
+   <tr valign="top">
+   	<td class="label" width="15%">Supplements:</td>
+   	<td class="value" width="85%">
+         <table class="supplementfiles">
+                     <tr>
+   	         <td>BDM.sas.txt: BDM.sas</td>
+   	         <td>
+                  <a href="https://www.jstatsoft.org/index.php/jss/article/downloadSuppFile/v014i02/BDM.sas.txt" class="action">
+                                             Download
+                                       </a>
+                                       (Downloads: 1534; 27KB)
+                  
+               </td>
+            </tr>
+                  </table>
+   	
+      <hr>
+      </tr>
+
+
+                     <tr valign="top">
+      	<td class="label" width="15%">
+            DOI:
+         </td>
+      	<td class="value" width="85%">
+      		<a id="pub-id::doi" href="http://dx.doi.org/10.18637/jss.v014.i02">10.18637/jss.v014.i02</a>
+         <hr>
+         </td>
+      </tr>
+   </table>
+
+																			
+
+
+
+
+
+
+
+
+<table class="data" width="100%">
+<tr valign="top">
+	<td class="value" width="0%" align="center">
+<br>
+<img src="https://www.jstatsoft.org/templates/article/cc.png" alt="by" >
+<br>
+<font size="-6">This work is licensed under the licenses</font>
+<font size="-6"><br></font>
+<font size="-6">Paper: <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a></font>
+<font size="-6"><br></font>
+<font size="-6">Code: GNU General Public License (at least one of <a href="http://www.gnu.org/licenses/gpl-2.0.html">version 2</a> or <a href="http://www.gnu.org/licenses/gpl-3.0.html">version 3</a>) or a <a href="https://gnu.org/licenses/license-list.html#GPLCompatibleLicenses">GPL-compatible license</a>.</font> 
+</td>
+</tr>
+</table>
+
