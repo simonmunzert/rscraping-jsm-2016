@@ -58,6 +58,18 @@ if (length(p_to_install) > 0) {
 Finally, if you want to follow the code on Twitter mining live in the course, please consult the instructions to connect with Twitter as described here (first section, "Connecting with Twitter"): [Connecting with Twitter using R](http://www.r-datacollection.com/blog/How-to-conduct-a-tombola-with-R/)
 
 
+## Live updates
+
+A way to solve the encoding issue on Windows machines in the breweries example, as suggested by Stas Kolenikov:
+
+Replace this line
+```r
+locations <- str_extract(breweries, "[[:digit:]].+?–")
+```
+with the following:
+```r
+locations <- str_extract(gsub(intToUtf8(0x2013),"-",breweries),"[[:digit:]].+?-")
+```
 
 
 
