@@ -111,9 +111,9 @@ p
 library(pageviews)
 ls("package:pageviews")
 
-trump_views <- article_pageviews(project = "en.wikipedia", article = "Donald Trump", user_type = "user", start = "2016010100", end = "20160720")
+trump_views <- article_pageviews(project = "en.wikipedia", article = "Donald Trump", user_type = "user", start = "2016010100", end = "20160729")
 head(trump_views)
-clinton_views <- article_pageviews(project = "en.wikipedia", article = "Hillary Clinton", user_type = "user", start = "2016010100", end = "20160720")
+clinton_views <- article_pageviews(project = "en.wikipedia", article = "Hillary Clinton", user_type = "user", start = "2016010100", end = "20160729")
 
 plot(ymd_h(trump_views$timestamp), trump_views$views, col = "red", type = "l")
 lines(ymd_h(clinton_views$timestamp), clinton_views$views, col = "blue")

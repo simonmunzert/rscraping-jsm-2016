@@ -87,10 +87,7 @@ browseURL(url)
 
 ## step 2: retrieve links
 html <- read_html(url)
-anchors <- html_nodes(html, xpath="//a")
-length(anchors) # probably too many?
-
-anchors <- html_nodes(html, xpath="//ul/li/a[1]")
+anchors <- html_nodes(html, xpath = "//ul/li/a[1]")
 links <- html_attr(anchors, "href")
 
 links_iffer <-
@@ -156,14 +153,21 @@ connections <- rbind(
   data.frame(from=connections$to,
              to=connections$from)
 )
+connections <- connections[!duplicated(connections),]
+
 
 ## step 6: visualize connections
-dir.create("figures")
 connections$value <- 1
 nodesDF <- data.frame(name = names, group = 1)
-
 
 network_out <- forceNetwork(Links = connections, Nodes = nodesDF, Source = "from", Target = "to", Value = "value", NodeID = "name", Group = "group", zoom = TRUE, opacityNoHover = 3)
 
 saveNetwork(network_out, file = 'connections.html')
 browseURL("connections.html")
+
+
+## step 7: identify top nodes in data frame
+nodesDF$id <- as.numeric(rownames(nodesDF)) - 1
+connections_df <- merge(connections, nodesDF, by.x = "to", by.y = "id", all = TRUE)
+to_count_df <- count(connections_df, name)
+arrange(to_count_df, desc(n))

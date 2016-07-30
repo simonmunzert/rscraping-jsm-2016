@@ -24,6 +24,9 @@ wd <- getwd()
 # next: see above
 
 
+## let's go to the buzzfeed.com page again and see dynamic webpages in action
+browseURL("https://www.buzzfeed.com/?country=us")
+
 
 ## setup R + RSelenium -------------------------
 
@@ -47,8 +50,11 @@ content <- read_html(url)
 # set up connection via RSelenium package
 # documentation: http://cran.r-project.org/web/packages/RSelenium/RSelenium.pdf
 
+
 # retrieve Selenium Server binary if necessary
 checkForServer()
+
+# on a Mac: launch downloaded Selenium .jar file externally via Jar Launcher
 
 # start server
 startServer() 
@@ -61,6 +67,8 @@ remDr$open()
 
 # navigate to data request page
 remDr$navigate(url) 
+
+# open web inspector tools (on a Mac with my setup, the following code did not work without it)
 
 # open regions menu
 css <- 'div.form-container:nth-child(2) > ul:nth-child(2) > li:nth-child(1) > span:nth-child(1)'

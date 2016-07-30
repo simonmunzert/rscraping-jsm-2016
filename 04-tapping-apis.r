@@ -40,14 +40,14 @@ ls("package:aRxiv")
 
 # access API with wrapper
 ?arxiv_search
-arxiv_df <- arxiv_search(query = "forecast AND submittedDate:[2016 TO 2017]", limit = 1000, output_format = "data.frame")
+arxiv_df <- arxiv_search(query = "forecast AND submittedDate:[2016 TO 2017]", limit = 500, output_format = "data.frame")
 View(arxiv_df)
 
 arxiv_count('au:"Gary King"')
 query_terms
 
 arxiv_count('abs:"political" AND submittedDate:[2016 TO 2017]')
-polsci_articles <- arxiv_search('abs:"political" AND submittedDate:[2016 TO 2017]', limit = 1000)
+polsci_articles <- arxiv_search('abs:"political" AND submittedDate:[2016 TO 2017]', limit = 500)
 
 
 #######################
@@ -74,7 +74,7 @@ x
 
 # if you want to tap an existing API, you have to
   # figure out how it works (what requests/actions are possible, what endpoints exist, what )
-  # register to use the API
+  # (register to use the API)
   # formulate queries to the API from within R
   # process the incoming data
 
@@ -169,7 +169,7 @@ getCurRateLimitInfo()
 
 ## working with the streamR package
 
-load("twitter_auth.RData")
+load("../rscraping-intro-duke-2/twitter_auth.RData")
 
 filterStream("tweets_stream.json", track = c("Trump"), timeout = 10, oauth = twitCred)
 tweets <- parseTweets("tweets_stream.json", simplify = TRUE)

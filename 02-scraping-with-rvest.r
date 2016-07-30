@@ -67,7 +67,7 @@ browseURL("https://www.buzzfeed.com/?country=us")
 
 # Cascading Style Sheets
 # style sheet language to give browsers information of how to render HTML document by providing more info on, e.g., layout, colors, and fonts
-# CSS code can be sotre within an HTML document or in an external CSS file
+# CSS code can be stored within an HTML document or in an external CSS file
 # the good thing for us: selectors, i.e. patterns used to specify which elements to format in a certain way, can be used to address the elements we want to extract information from
 # works via tag name (e.g., <h2>, <p>, ...) or element attributes "id" and "class"
 
@@ -93,8 +93,8 @@ browseURL("https://www.jstatsoft.org/about/editorialTeam")
 # you can also use XPath with R
 # can be more powerful than CSS selectors
 # learning XPath takes probably a day (and some practice) 
-# you'll probably not need it, so we don't talk about it here
-# if you want to know more, consult our book--we give it an extensive treatment
+# you'll probably not need it very often, so we don't talk about it here
+# if you want to know more, consult the handout (or our book)--we give it an extensive treatment
 
 
 
@@ -104,7 +104,7 @@ browseURL("https://www.jstatsoft.org/about/editorialTeam")
 
   # see also: https://github.com/hadley/rvest
   # convenient package to scrape information from web pages
-  # builds on other packages like xml2 and httr
+  # builds on other packages, such as xml2 and httr
   # provides very intuitive functions to import and process webpages
 
 
@@ -129,7 +129,7 @@ headings <- str_replace_all(headings, "\\n", "") %>% str_trim()
 #######################
 
 # 1. revisit the jstatsoft.org website from above and use rvest to extract the names!
-# 2. bonus: try and extract the full lines including the affiliation and count how many of the editors are at a statistics or mathematics department or institution!
+# 2. bonus: try and extract the full lines including the affiliation, and count how many of the editors are at a statistics or mathematics department or institution!
 
 
 
@@ -142,6 +142,7 @@ headings <- str_replace_all(headings, "\\n", "") %>% str_trim()
 ## scraping HTML tables with rvest
 
 url <- "https://en.wikipedia.org/wiki/Joint_Statistical_Meetings"
+browseURL(url)
 url_parsed <- read_html(url)
 tables <- html_table(url_parsed, fill = TRUE)
 tables
@@ -158,7 +159,7 @@ table(meetings$Location) %>% sort()
 #######################
 
 # 1. scrape the table tall buildings (300m+) currently under construction from
-browseurl("https://en.wikipedia.org/wiki/List_of_tallest_buildings_in_the_world")
+browseURL("https://en.wikipedia.org/wiki/List_of_tallest_buildings_in_the_world")
 
 # 2. how many of those buildings are currently built in China? and in which city are most of the tallest buildings currently built?
 
@@ -174,7 +175,7 @@ browseURL("http://selectorgadget.com/")
 # and follow the advice below: "drag this link to your bookmark bar: >>SelectorGadget>> (updated August 7, 2013)"
 
 ## SelectorGadget is magic. Proof:
-browseurl("https://www.buzzfeed.com/?country=us")
+browseURL("https://www.buzzfeed.com/?country=us")
 
 
 #######################
@@ -190,7 +191,7 @@ browseurl("https://www.buzzfeed.com/?country=us")
 ## dealing with multiple pages ----------
 
 # often, we want to scrape data from multiple pages
-# these are the cases where automating the scraping becomes  r e a l l y  powerful
+# in such scenarios, automating the scraping process becomes  r e a l l y  powerful
 # my philosophy: download first, then import and extract information. minimizes server load and saves time
 
 
@@ -229,8 +230,8 @@ length(list_files)
 
 # delete non-existing articles
 files_size <- sapply(list_files_path, file.size)
-table(files_size)
-delete_files <- list_files_path[files_size == 22094]
+table(files_size) %>% sort()
+delete_files <- list_files_path[files_size == 24752]
 sapply(delete_files, file.remove)
 list_files_path <-  list.files(folder, pattern = "0.*", full.names = TRUE) # update list of files
 
@@ -259,6 +260,6 @@ head(dat)
 dattop <- dat[order(dat$numViews, decreasing = TRUE),]
 dattop[1:10,]
 summary(dat$numViews)
-plot(density(dat$numViews), yaxt="n", ylab="", xlab="Number of views", main="Distribution of article page views in JSTATSOFT")
+plot(density(dat$numViews, from = 0, ), yaxt="n", ylab="", xlab="Number of views", main="Distribution of article page views in JSTATSOFT")
 
 
