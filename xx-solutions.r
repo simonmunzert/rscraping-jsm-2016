@@ -24,8 +24,8 @@ browseURL("https://www.jstatsoft.org/about/editorialTeam")
 
 url <- "https://www.jstatsoft.org/about/editorialTeam"
 url_parsed <- read_html(url)
-names <- html_nodes(url_parsed, ".member a") %>% html_text()
-names2 <- html_nodes(url_parsed, "#group a") %>% html_text()
+names <- html_nodes(url_parsed, css = ".member a") %>% html_text()
+names <- html_nodes(url_parsed, "#group a") %>% html_text()
 
 affiliations <- html_nodes(url_parsed, ".member li") %>% html_text()
 str_detect(affiliations, "tatisti|athemati") %>% table

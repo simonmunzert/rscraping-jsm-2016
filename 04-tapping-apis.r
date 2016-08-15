@@ -131,11 +131,11 @@ browseURL("http://openweathermap.org/api")
 # 4. paste your consumer key and secret into the following code and execute it:
 
 # store credentials in the R environment (uncomment the following lines if you want to store your credentials)
-# credentials <- c(
-#   "twitter_api_key=rN3Td2zZADLWZBN9Pj7X2eBN",
-#   "twitter_api_secret=abcqBpUzE7BQ65QJ6BRzpUzjyaRCfwn3ndrUUcqDWfhCN7Fj")
-# fname <- paste0(normalizePath("~/"),".Renviron")
-# writeLines(credentials, fname)
+credentials <- c(
+  "twitter_api_key=rN3Td2zZADLWZBN9Pj7X2eBN",
+  "twitter_api_secret=abcqBpUzE7BQ65QJ6BRzpUzjyaRCfwn3ndrUUcqDWfhCN7Fj")
+fname <- paste0(normalizePath("~/"),".Renviron")
+writeLines(credentials, fname)
 
 
 ## working with the twitteR package

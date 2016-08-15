@@ -75,6 +75,7 @@ css <- 'div.form-container:nth-child(2) > ul:nth-child(2) > li:nth-child(1) > sp
 regionsElem <- remDr$findElement(using = 'css', value = css)
 openRegions <- regionsElem$clickElement() # click on button
 
+
 # selection "European Union"
 css <- 'div.form-container:nth-child(2) > ul:nth-child(2) > li:nth-child(1) > ul:nth-child(3) > li:nth-child(5) > label:nth-child(1) > input:nth-child(1)'
 euElem <- remDr$findElement(using = 'css', value = css)
@@ -106,7 +107,7 @@ remDr$closeServer()
 # parse index table
 content <- read_html("iea-renewables.html", encoding = "utf8") 
 tabs <- html_table(content, fill = TRUE)
-tab <- head(tabs[[1]])
+tab <- tabs[[1]]
 
 # add names
 names(tab) <- c("title", "country", "year", "status", "type", "target")
