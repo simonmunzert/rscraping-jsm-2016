@@ -79,6 +79,7 @@ locations <- str_extract(gsub(intToUtf8(0x2013),"-",breweries),"[[:digit:]].+?-"
 | Web technologies, general | http://www.w3.org/ | Base of the World Wide Web Consortium (W3C), also provides access to standards and drafts of web technologies |
 |  | http://w3schools.com | Great tutorial playground to lern web technologies interactively |
 |  | https://w3techs.com/technologies | Overview of all kinds of web technologies |
+|  | https://www.scaler.com/topics/ | Complete tutorial to learn web development basics - HTML, CSS, JS, etc. |
 | XML and XPath | http://selectorgadget.com/ | Probably the most useful tool for generating CSS selectors and XPath expressions with a simple point-and-click approach |
 |  | http://www.xmlvalidation.com/ | Online XML validator |
 |  | http://www.rssboard.org/ | Information about the Really Simple Syndication standard |
